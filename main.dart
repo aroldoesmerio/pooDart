@@ -1,12 +1,11 @@
 import 'pessoa.dart';
 
 void main() {
-  Human homer = Human();
-
-  homer.name = "Homer";
-  homer.age = 71;
+  Human homer = Human("Homer", 71);
+  Human baby = Human.born("Meg");
 
   homer.presentation();
   homer.birthday();
   homer.slepp();
+  print(baby);
 }
