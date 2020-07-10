@@ -1,18 +1,22 @@
 class Human {
   String name;
-  int age;
+  int _age;
+  double _height;
 
-  Human(this.name, this.age);
+  Human(this.name, this._age);
 
   Human.born(this.name) {
-    this.age = 0;
-    print("Hey!!! the $name is born. We are Welcome in this World");
+    this._age = 0;
+    this._height = 0.30;
+    print(
+        "Hey!!! the $name is born and your height is $_height. We are Welcome in this World");
     slepp();
   }
 
   presentation() {
     print("Ola $name you are welcome!");
-    print("Today you are $age ago");
+    print("Today you are $_age ago");
+    print("Your height is $_height");
   }
 
   slepp() {
@@ -20,7 +24,17 @@ class Human {
   }
 
   birthday() {
-    age++;
-    print("Congratulations!!! you have $age ago");
+    _age++;
+    print("Congratulations!!! you have $_age ago");
+  }
+
+  int get age => _age;
+
+  double get height => _height;
+
+  set height(double height) {
+    if (height > 0.0 && height < 3.0) {
+      _height = height;
+    }
   }
 }
