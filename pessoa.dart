@@ -1,16 +1,20 @@
-class Human {
+import 'animal.dart';
+
+class Human extends Animal {
   String name;
   int _age;
   double _height;
 
-  Human(this.name, this._age);
+  Human(this.name, this._age, String breed, String classe) : super();
 
   Human.born(this.name) {
+    breed = "york";
     this._age = 0;
     this._height = 0.30;
     print(
         "Hey!!! the $name is born and your height is $_height. We are Welcome in this World");
     slepp();
+    race();
   }
 
   presentation() {
